@@ -33,7 +33,7 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product){
-    this.alertifyService.success(product.name+" added")
+    this.alertifyService.success(product.name + " added");
   }
 
 }

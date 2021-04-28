@@ -1,4 +1,6 @@
-<h3 *ngIf="products; else noProduct">{{ title }}</h3>
+<!-- <h3 *ngIf="products; else noProduct">{{ title }}</h3> -->
+
+<app-category></app-category>
 
 <div class="mb-3">
   <input 
@@ -11,7 +13,6 @@
   <div *ngIf="filterText" class="form-text">
     Searching <strong> {{filterText}}  </strong>
   </div>
-  
 </div>
 
 <div class="row">
@@ -20,7 +21,7 @@
       Bu kategoride ürün yoktur.
     </div>
   </ng-template>
-  <div *ngFor="let urun of products | productFilter:filterText " class="card" style="width: 18rem">
+  <div *ngFor="let urun of products | productFilter:filterText " class="productbox" style="width: 18rem">
     <img [src]="urun.ImageUrl" class="card-img-top" alt="..." />
     <div class="card-body">
       <h5 class="card-title">{{urun.name | uppercase }}
