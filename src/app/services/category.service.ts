@@ -17,7 +17,8 @@ export class CategoryService {
       tap(data=>console.log(JSON.stringify(data))),
       catchError(this.handleError)
     );
-  } //burada sistemde olucak hatayı kontrol etmek için 
+  } 
+  //burada sistemde olucak hatayı kontrol etmek için 
   // oluşturduğumuz komutlar
   handleError(err: HttpErrorResponse) {
    

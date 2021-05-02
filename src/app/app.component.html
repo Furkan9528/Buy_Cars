@@ -1,3 +1,4 @@
+
 <body>
   <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3">Car Sale</a>
@@ -7,14 +8,19 @@
     </button>
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <a class="nav-link">Sign out</a>
+        <a *ngIf="isLoggedIn() == false"  class="nav-link"  routerLink="/login">
+          Sign in
+        </a>
+        <a *ngIf="isLoggedIn() == true" (click)="logOut()"  class="nav-link">
+          Logout
+        </a>
       </li>
     </ul>
   </header>
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <nav class=" d-none d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
@@ -91,11 +97,13 @@
         </div>
       </nav>
     </div>
-    <div class="col-md-8">
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+    <div class="col-md-10">
+      <main class="ms-sm-auto col-lg-10 px-4">
         <router-outlet></router-outlet>
       </main>
     </div> 
     </div>
   </div>
 </body>
+
+
