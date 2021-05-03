@@ -20,5 +20,6 @@ export class AppComponent {
   logOut(){
     this.accountService.logOut();
   }
+
 }
 
